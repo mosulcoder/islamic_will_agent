@@ -45,6 +45,28 @@ class IslamicWillGenerator {
     _county() { return this.t.county || "[COUNTY]"; }
     _madhhab() { return this.t.madhhab || "Hanafi"; }
     _dob() { return this.t.dob || "[DOB]"; }
+    _gender() { return (this.t.gender || "male").toLowerCase(); }
+    _isMale() { return this._gender() === "male"; }
+
+    // Returns "Wife" or "Husband" based on testator's gender
+    _spouseTerm() { return this._isMale() ? "Wife" : "Husband"; }
+
+    // Pronouns for the *spouse* (opposite of testator)
+    _spousePronouns() {
+        return this._isMale()
+            ? { subj: "she", obj: "her", poss: "her" }
+            : { subj: "he", obj: "him", poss: "his" };
+    }
+
+    // Ghusl preference from user input, or gender-appropriate default
+    _ghuslPref() {
+        if (this.t.ghusl_preference) return this.t.ghusl_preference;
+        const gender = this._isMale() ? "man" : "woman";
+        return `a qualified Muslim ${gender} of the same gender`;
+    }
+
+    // Kafan: 3 pieces for male, 5 for female
+    _kafanCount() { return this._isMale() ? "three" : "five"; }
 
     _elective_pct() {
         const y = this.sp.years_married || 0;
@@ -56,7 +78,8 @@ class IslamicWillGenerator {
 
     _spouse_share() {
         const shares = this.dist.shares || [];
-        return shares.find(s => s.relationship === "Wife") || null;
+        const term = this._spouseTerm();
+        return shares.find(s => s.relationship === term) || null;
     }
 
     _wasiyyah_total() {
@@ -227,8 +250,8 @@ class IslamicWillGenerator {
         children.push(this._rule(), this._article("ARTICLE IV — FUNERAL AND BURIAL INSTRUCTIONS (TAJHEEZ WA TAKFEEN)"));
         children.push(this._para("I direct that my funeral and burial be conducted in strict accordance with Sunni Islamic tradition:"));
         const funeralItems = [
-            "(a)  Ghusl: My body shall be washed by a qualified Muslim of the same gender, per the Sunnah;",
-            "(b)  Kafan: My body shall be wrapped in white unsewn linen cloth (Kafan);",
+            `(a)  Ghusl: My body shall be washed by ${this._ghuslPref()}, per the Sunnah;`,
+            `(b)  Kafan: My body shall be wrapped in white unsewn linen cloth (Kafan) — ${this._kafanCount()} pieces;`,
             "(c)  Janazah Prayer: An Islamic funeral prayer (Salat al-Janazah) shall be performed;",
             `(d)  Burial: I shall be buried in a Muslim cemetery in or near ${county}, Tennessee, facing the Qiblah if possible;`,
             "(e)  No Embalming: My body shall NOT be embalmed unless required by law;",
@@ -246,7 +269,7 @@ class IslamicWillGenerator {
         children.push(this._para("I direct my Executor to pay all of my lawful debts from my estate before any inheritance distribution:"));
         children.push(this._para("5.1  Religious Obligations:", { bold: true, spaceAfter: 40 }));
         const relDebts = [
-            "(a)  Any unpaid Mahr (dowry) owed to my wife;",
+            this._isMale() ? "(a)  Any unpaid Mahr (dowry) owed to my wife;" : "(a)  Any Mahr (dowry) obligations, if applicable;",
             "(b)  Any unpaid Zakat (obligatory charity) from prior years;",
             "(c)  Any Kaffarah (religious expiation) owed;",
             "(d)  Any cost of Hajj by proxy (Hajj al-Badal) if applicable."
@@ -408,7 +431,8 @@ class IslamicWillGenerator {
 
         children.push(this._rule(), this._article("2. PURPOSE AND INTENT"));
         children.push(this._para(`The Undersigned acknowledges that the Testator has executed a Last Will and Testament intended to comply with Sunni Islamic Law (Shariah), ${madhhab} school.`));
-        children.push(this._para(`The Undersigned understands that under T.C.A. § 31-4-101, as a surviving spouse married ${this.sp.years_married || 0} years, she is entitled to an Elective Share of ${this._elective_pct()} of the Testator's estate.`));
+        const sp_pn = this._spousePronouns();
+        children.push(this._para(`The Undersigned understands that under T.C.A. § 31-4-101, as a surviving spouse married ${this.sp.years_married || 0} years, ${sp_pn.subj} is entitled to an Elective Share of ${this._elective_pct()} of the Testator's estate.`));
 
         let islamicStr = "[Islamic share per Fara'id]";
         let islAmt = "[amount]";
@@ -416,7 +440,7 @@ class IslamicWillGenerator {
             islamicStr = `${ss.fraction_num}/${ss.fraction_den} (${parseFloat(ss.percentage || 0).toFixed(2)}%)`;
             islAmt = this._formatCurrency(ss.amount || 0);
         }
-        children.push(this._para(`The Undersigned further understands that her Islamic share under ${madhhab} Fara'id is ${islamicStr} of the Net Mirath, estimated at ${islAmt}. It is her free and voluntary intent to waive her statutory rights to facilitate distribution per Islamic Law.`));
+        children.push(this._para(`The Undersigned further understands that ${sp_pn.poss} Islamic share under ${madhhab} Fara'id is ${islamicStr} of the Net Mirath, estimated at ${islAmt}. It is ${sp_pn.poss} free and voluntary intent to waive ${sp_pn.poss} statutory rights to facilitate distribution per Islamic Law.`));
 
         children.push(this._rule(), this._article("3. WAIVER OF RIGHTS"));
         children.push(this._para("The Undersigned hereby voluntarily and irrevocably waives, releases, and relinquishes any and all rights as surviving spouse, including:"));
@@ -427,10 +451,10 @@ class IslamicWillGenerator {
             "(d)  The Right to Homestead (T.C.A. § 30-2-201)."
         ];
         waiveItems.forEach(i => children.push(this._para(i, { indent: 0.3, spaceAfter: 60 })));
-        children.push(this._para(`The Undersigned agrees to accept only her Islamic inheritance share (${islamicStr}) as stated in the Will.`));
+        children.push(this._para(`The Undersigned agrees to accept only ${sp_pn.poss} Islamic inheritance share (${islamicStr}) as stated in the Will.`));
 
         children.push(this._rule(), this._article("4. FINANCIAL DISCLOSURE"));
-        children.push(this._para("The Undersigned acknowledges that she has been provided with, or has voluntarily waived the right to, a fair and reasonable disclosure of the Testator's property and financial obligations:"));
+        children.push(this._para(`The Undersigned acknowledges that ${sp_pn.subj} has been provided with, or has voluntarily waived the right to, a fair and reasonable disclosure of the Testator's property and financial obligations:`));
 
         const gross = this.est.gross_total || 0;
         const probate = this.est.probate || 0;
@@ -449,10 +473,10 @@ class IslamicWillGenerator {
         finItems.forEach(i => children.push(this._para("•  " + i, { indent: 0.3, spaceAfter: 60 })));
 
         children.push(this._rule(), this._article("5. INDEPENDENT COUNSEL"));
-        children.push(this._para("The Undersigned acknowledges that she has had the opportunity to consult with independent legal counsel regarding the legal consequences of this waiver and has either done so or knowingly and voluntarily declined."));
+        children.push(this._para(`The Undersigned acknowledges that ${sp_pn.subj} has had the opportunity to consult with independent legal counsel regarding the legal consequences of this waiver and has either done so or knowingly and voluntarily declined.`));
 
         children.push(this._rule(), this._article("6. BINDING EFFECT"));
-        children.push(this._para("This waiver shall be binding upon the Undersigned, her heirs, executors, administrators, and assigns."));
+        children.push(this._para(`This waiver shall be binding upon the Undersigned, ${sp_pn.poss} heirs, executors, administrators, and assigns.`));
 
         children.push(this._rule(), this._article("SIGNATURE"));
         children.push(this._para("I, the Undersigned, have read and understand this Waiver and sign it freely and voluntarily.", { spaceAfter: 400 }));
@@ -461,7 +485,7 @@ class IslamicWillGenerator {
         children.push(this._rule(), this._article("NOTARY ACKNOWLEDGMENT"));
         children.push(this._subTitlePara("STATE OF TENNESSEE"));
         children.push(this._subTitlePara(`COUNTY OF ${county.toUpperCase().replace(' COUNTY', '')}`));
-        children.push(this._para(`Before me, the undersigned Notary Public, personally appeared ${spouse.toUpperCase()}, who acknowledged she executed this waiver freely and voluntarily.`, { spaceAfter: 400 }));
+        children.push(this._para(`Before me, the undersigned Notary Public, personally appeared ${spouse.toUpperCase()}, who acknowledged ${sp_pn.subj} executed this waiver freely and voluntarily.`, { spaceAfter: 400 }));
         children.push(...this._sigBlock("Notary Public, State of Tennessee", false));
         children.push(this._detailLine("My Commission Expires"));
         children.push(this._para("[NOTARY SEAL]", { spaceBefore: 160 }));
@@ -537,7 +561,7 @@ class IslamicWillGenerator {
                 ["Document Storage", [
                     "Store original Will + Waiver in a fireproof home safe",
                     "DO NOT store the original Will in a safe deposit box (may require probate to access)",
-                    `Give ${spouse} a copy; tell her where the original is stored`,
+                    `Give ${spouse} a copy; tell ${this._spousePronouns().obj} where the original is stored`,
                     "Give a copy to your estate planning attorney for their file",
                 ]],
                 ["Non-Probate Asset Updates  (complete within 30 days)", [
@@ -656,7 +680,7 @@ class IslamicWillGenerator {
                 const pct = s.percentage || 0;
                 const prob = s.amount || 0;
                 const rVal = ret * pct / 100;
-                const hVal = (s.relationship === "Wife") ? home_h : 0;
+                const hVal = (s.relationship === this._spouseTerm()) ? home_h : 0;
                 const total = prob + rVal + hVal;
 
                 colProb += prob; colRet += rVal; colHome += hVal; colAll += total;
@@ -679,7 +703,7 @@ class IslamicWillGenerator {
             children.push(new Table({ rows, width: { size: 100, type: WidthType.PERCENTAGE } }));
 
             children.push(this._para("", { spaceAfter: 120 }));
-            children.push(this._para("* Spouse retains her own 50% of home as co-owner regardless of deed type.", { size: SMALL_PT, italic: true }));
+            children.push(this._para(`* Spouse retains ${this._spousePronouns().poss} own 50% of home as co-owner regardless of deed type.`, { size: SMALL_PT, italic: true }));
             children.push(this._rule());
         }
 

@@ -11,8 +11,8 @@ The Spousal Elective Share Conflict (T.C.A. § 31-4-101):
 
 Risk: In TN, a surviving spouse has a legal right to "elect" against a will. Depending on the marriage length, they can claim 10% to 40% of the estate.
 
-Conflict: This often exceeds the Islamic 1/8 (12.5%) or 1/4 (25%) share.
+Conflict: This often exceeds the Islamic spousal share — 1/8 or 1/4 for a wife, 1/4 or 1/2 for a husband (depending on whether children exist).
 
-Solution: For the will to be "Islamically compliant," the spouse should sign a "Post-nuptial Waiver of Elective Share" to agree to the Islamic portion only.
+Solution: For the will to be "Islamically compliant," the surviving spouse (husband or wife) should sign a "Post-nuptial Waiver of Elective Share" to agree to the Islamic portion only.
 
 Guardianship: TN courts prioritize the "best interest of the child," but a will is the primary place to nominate a Muslim guardian.

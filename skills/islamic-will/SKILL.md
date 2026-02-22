@@ -32,6 +32,7 @@ Work through these stages **in order**. Do not skip stages. Confirm completion o
 ### STAGE 1 — Personal Information
 Collect:
 - Full legal name (as it should appear on the will)
+- **Gender:** Male / Female (determines spousal share type, Kafan instructions, Ghusl language, and pronoun usage throughout all documents)
 - Tennessee County of residence (determines probate court jurisdiction)
 - Date of birth
 - Preferred Madhhab: **Hanafi** or **Shafi'i**? (If unsure, recommend Hanafi as the default for U.S. Muslims)
@@ -40,9 +41,10 @@ Collect:
 ### STAGE 2 — Heir Identification
 Ask about each category separately. Record counts (sons, daughters, etc.).
 
-**Spouses:**
+**Spouse:**
 - Is your spouse Muslim? (Non-Muslim spouses cannot inherit via Mirath; may receive Wasiyyah up to 1/3)
-- If multiple wives (up to 4): How many? All wives **equally share** the single spousal share (1/8 or 1/4)
+- **If testator is male:** How many wives (up to 4)? All wives **equally share** the single spousal share (1/8 or 1/4)
+- **If testator is female:** Record husband's name. Husband receives 1/4 (with children) or 1/2 (without children)
 - Is your spouse willing to sign an Elective Share Waiver? (**Mandatory warning — see Tennessee Compliance section**)
 
 **Children:**
@@ -72,13 +74,18 @@ Ask about each category separately. Record counts (sons, daughters, etc.).
 ### STAGE 3 — Estate Overview
 Collect:
 
-**Probate Estate (governed by this will):**
-- Estimated total gross value
-- Real property (land, home) — address(es) in Tennessee
-  - *If jointly owned with spouse, immediately ask: "How would you like to handle this jointly owned home in your estate plan?"*
+**Joint Property (ask BEFORE dollar amounts):**
+- Do you own any real property (land, home)? If yes:
+  - Is it jointly owned with your spouse?
+  - *If jointly owned, immediately ask: "How would you like to handle this jointly owned property in your estate plan?"*
     - **Option A (Keep As-Is / JTWROS):** Home passes 100% to spouse automatically upon death. Bypasses Shariah distribution completely.
     - **Option B (Convert to Tenancy by the Entirety - TBE):** Home passes 100% to spouse automatically. Protects against individual creditors in TN, but bypasses Shariah distribution.
     - **Option C (Convert to Tenancy in Common - TIC):** 50% of the home value passes through this will per Islamic Law (*Mirath*). The other 50% is retained by the surviving spouse.
+  - Record the address(es) in Tennessee
+
+**Probate Estate (governed by this will):**
+- Estimated total gross value
+- Real property value (based on titling decision above)
 - Personal property (vehicles, jewelry, household)
 - Business interests
 - Bank accounts (checking, savings)
@@ -93,7 +100,7 @@ Alert the user: The following assets pass OUTSIDE the will. Shariah distribution
 - Tennessee Revocable Living Trust assets
 
 **Religious Debts (paid before inheritance):**
-- Unpaid *Mahr* (dowry) owed to wife
+- Unpaid *Mahr* (dowry) — if testator is male, this is owed to the wife; if testator is female, confirm whether Mahr was already received
 - Unpaid *Zakat*
 - *Kaffarah* (expiations) owed
 - Unfulfilled *Hajj* (may be performed by proxy, cost paid from estate)
@@ -107,11 +114,19 @@ Alert the user: The following assets pass OUTSIDE the will. Shariah distribution
 **Funeral Expenses:**
 - Estimate for Islamic burial (ghusl, kafan, Islamic cemetery)
 - Pre-paid funeral plan? Y/N
+- **Ghusl preference:** Do you have a specific preference for who performs the Ghusl? Common preferences include: "a qualified Muslim [man/woman] who does not know me," "a specific named person," or "no preference (any qualified Muslim of the same gender)."
+
+**Small Estate Notice (T.C.A. § 30-4-103):**
+If the total probate estate is under **$50,000**, Tennessee allows a simplified **Small Estate Affidavit** process instead of full probate. If the user's estate qualifies, mention this option and ask if they'd like guidance on the simplified process.
 
 ### STAGE 4 — Wasiyyah (Bequest — Optional, Max 1/3)
+
+> ⚠️ **Lā Wasiyyata li Wārith:** Before asking about bequests, proactively warn the user: "Islamic Law prohibits bequests (*Wasiyyah*) to existing Quranic heirs — your spouse, children, parents, and other heirs who will receive a Mirath share. Wasiyyah can only go to non-heirs, such as charities, non-Muslim relatives, adopted children, or friends."
+
 - Does the user wish to leave anything to non-heirs (charity, non-Muslim relatives, friends, adopted children)?
 - **Hard rule:** Wasiyyah cannot exceed 1/3 of the net estate (after funeral + debts)
 - **Hard rule:** Wasiyyah cannot be made to an existing Quranic heir (unless all other heirs consent after death)
+- **Feasibility check for small estates:** If the net estate (after funeral + debts) is under $50,000, warn the user that funeral costs may consume a significant portion. Recommend expressing Wasiyyah as a **percentage** of the net estate rather than a fixed dollar amount to prevent the bequest from being eliminated by expenses.
 - Collect: recipient name, relationship, amount or percentage, purpose
 
 ### STAGE 5 — Executor & Guardian
@@ -152,10 +167,12 @@ Then output the complete JSON block populated with all collected data, matching 
 ```json
 {
   "testator": {
-    "full_name": "[Full Legal Name]",
-    "county":    "[County Name]",
-    "dob":       "[Date of Birth]",
-    "madhhab":   "[Hanafi or Shafi'i]"
+    "full_name":        "[Full Legal Name]",
+    "gender":           "[male or female]",
+    "county":           "[County Name]",
+    "dob":              "[Date of Birth]",
+    "madhhab":          "[Hanafi or Shafi'i]",
+    "ghusl_preference": "[e.g. 'a qualified Muslim woman who does not know me' or empty for default]"
   },
   "spouse": {
     "full_name":     "[Spouse Full Name]",
@@ -197,7 +214,7 @@ Then output the complete JSON block populated with all collected data, matching 
     "shares": [
       {
         "heir":         "[Name]",
-        "relationship": "[Wife/Son/Daughter/Father/Mother]",
+        "relationship": "[Wife/Husband/Son/Daughter/Father/Mother]",
         "fraction_num": 1,
         "fraction_den": 1,
         "percentage":   0.0,
@@ -315,17 +332,17 @@ Show the calculation steps. Explain any Aul or Radd applied. Explain any exclusi
 - **Self-Proving Affidavit:** Strongly recommended — executed before a Notary Public at the time of signing; eliminates need for witness testimony at probate
 
 ### Spousal Elective Share — MANDATORY WARNING (T.C.A. § 31-4-101)
-Always deliver this warning to married users:
+Always deliver this warning to married users (regardless of the testator's gender — this applies to both husbands and wives):
 
-Under Tennessee law, a surviving spouse may "elect against" a will and claim:
+Under Tennessee law, a surviving spouse — whether husband or wife — may "elect against" a will and claim:
 - Married < 3 years: **10%** of estate
 - Married 3–6 years: **20%** of estate
 - Married 6–9 years: **30%** of estate
 - Married 9+ years: **40%** of estate
 
-This often exceeds the Islamic fixed share (wife gets 1/8 = 12.5% with children, or 1/4 = 25% without children). After 9 years of marriage, Tennessee grants **40%** — far more than the Shariah share, taking from children, parents, and other heirs.
+The Islamic spousal share (1/8 for a wife, 1/4 for a husband — with children; 1/4 for a wife, 1/2 for a husband — without children) is often less than the Tennessee elective share. After 9 years of marriage, Tennessee grants **40%** — which may far exceed the Shariah share, taking from children, parents, and other heirs.
 
-**Solution:** The spouse must sign a **Waiver of Elective Share** (T.C.A. § 31-4-102) to voluntarily accept only the Islamic share. Draft this document alongside the will.
+**Solution:** The surviving spouse must sign a **Waiver of Elective Share** (T.C.A. § 31-4-102) to voluntarily accept only the Islamic share. Draft this document alongside the will.
 
 The waiver must be:
 - In writing

@@ -26,7 +26,7 @@ A bilingual reference for users and the AI agent. Terms are organized by categor
 | الكَفَن | *Kafan* | Shroud / Burial Cloth | White unsewn linen |
 | صلاة الجنازة | *Salat al-Janazah* | Funeral Prayer | Obligatory collective prayer (*Fard Kifaya*) |
 | الدُّيُون | *Al-Duyun* | Debts | Second priority — religious and secular |
-| المَهْر | *Al-Mahr* | Dowry / Dower | Wife's right upon marriage or death — religious debt |
+| المَهْر | *Al-Mahr* | Dowry / Dower | Obligatory gift from husband to wife upon marriage — a religious debt on the husband's estate if unpaid at death |
 | الزكاة | *Al-Zakat* | Obligatory Charity | 2.5% of eligible wealth annually — religious debt |
 | الكَفَّارَة | *Al-Kaffarah* | Expiation / Atonement | Payment for missed fasts, oaths, etc. — religious debt |
 | حجَّة الإسلام | *Hajj* | Pilgrimage | Proxy cost is a religious debt if never performed |

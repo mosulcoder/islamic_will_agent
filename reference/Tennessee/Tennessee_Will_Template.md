@@ -61,9 +61,9 @@ I waive the requirement that my Executor post a bond.
 
 I direct that my funeral and burial be conducted in strict accordance with **Sunni Islamic tradition**:
 
-(a) **Ghusl (Ritual Washing):** My body shall be washed (*Ghusl*) by a qualified Muslim of the same gender, according to the Sunnah;
+(a) **Ghusl (Ritual Washing):** My body shall be washed (*Ghusl*) by [GHUSL PREFERENCE — e.g., "a qualified Muslim woman who does not know me" / "a qualified Muslim of the same gender" / a specific named person], according to the Sunnah;
 
-(b) **Kafan (Shrouding):** My body shall be wrapped in white unsewn linen cloth (*Kafan*) — three pieces for a male, five pieces for a female;
+(b) **Kafan (Shrouding):** My body shall be wrapped in white unsewn linen cloth (*Kafan*) — [KAFAN COUNT — three pieces if male, five pieces if female];
 
 (c) **Janazah Prayer:** An Islamic funeral prayer (*Salat al-Janazah*) shall be performed;
 

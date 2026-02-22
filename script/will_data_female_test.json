@@ -1,0 +1,101 @@
+{
+    "_comment": "Test: Female testator with husband",
+    "testator": {
+        "full_name": "Fatima Al-Rashid",
+        "gender": "female",
+        "county": "Davidson",
+        "dob": "March 15, 1985",
+        "madhhab": "Hanafi",
+        "ghusl_preference": "a qualified Muslim woman who does not know me"
+    },
+    "spouse": {
+        "full_name": "Ahmad Al-Rashid",
+        "is_muslim": true,
+        "years_married": 12
+    },
+    "heirs": {
+        "daughters": [
+            "Aisha Al-Rashid"
+        ],
+        "sons": [
+            "Omar Al-Rashid",
+            "Yusuf Al-Rashid"
+        ],
+        "father": {
+            "name": "Ibrahim Al-Rashid",
+            "alive": true
+        },
+        "mother": {
+            "name": "Khadijah Al-Rashid",
+            "alive": true
+        },
+        "siblings_excluded": true
+    },
+    "estate": {
+        "gross_total": 25000,
+        "probate": 20000,
+        "home": {
+            "value": 0,
+            "joint": false
+        },
+        "retirement_401k": 5000,
+        "funeral_expenses": 5000,
+        "debts": 0
+    },
+    "wasiyyah": [
+        {
+            "recipient": "Islamic Relief USA",
+            "amount": 1000,
+            "purpose": "orphan sponsorship (Sadaqah Jariyah)"
+        }
+    ],
+    "executor": {
+        "primary": "Ahmad Al-Rashid",
+        "alternate": "Ibrahim Al-Rashid"
+    },
+    "guardian": {
+        "primary": "Ibrahim Al-Rashid",
+        "alternate": "Khadijah Al-Rashid"
+    },
+    "distribution": {
+        "madhhab": "Hanafi",
+        "aul_applied": false,
+        "aul_denominator": 1,
+        "net_mirath": 14000,
+        "exclusion_note": "Siblings excluded by presence of father",
+        "shares": [
+            {
+                "heir": "Ahmad Al-Rashid",
+                "relationship": "Husband",
+                "fraction_num": 1,
+                "fraction_den": 4,
+                "percentage": 25.0,
+                "amount": 3500
+            },
+            {
+                "heir": "Omar Al-Rashid",
+                "relationship": "Son",
+                "fraction_num": 2,
+                "fraction_den": 5,
+                "percentage": 30.0,
+                "amount": 4200
+            },
+            {
+                "heir": "Yusuf Al-Rashid",
+                "relationship": "Son",
+                "fraction_num": 2,
+                "fraction_den": 5,
+                "percentage": 30.0,
+                "amount": 4200
+            },
+            {
+                "heir": "Aisha Al-Rashid",
+                "relationship": "Daughter",
+                "fraction_num": 1,
+                "fraction_den": 5,
+                "percentage": 15.0,
+                "amount": 2100
+            }
+        ]
+    }
+}
