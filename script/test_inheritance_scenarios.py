@@ -245,6 +245,14 @@ scenarios = [
     {
         "name": "Scenario 60: 1 Son, 1 Non-Muslim Daughter",
         "heirs": [Heir("son"), Heir("daughter", is_muslim=False)]
+    },
+    {
+        "name": "Scenario 61: Al-Akdariyyah (Shafi'i) - Husband, Mother, Grandfather, Full Sister",
+        "heirs": [Heir("husband"), Heir("mother"), Heir("grandfather"), Heir("sister")]
+    },
+    {
+        "name": "Scenario 62: Akdariyyah Family but Hanafi Rules - Husband, Mother, Grandfather, Full Sister",
+        "heirs": [Heir("husband"), Heir("mother"), Heir("grandfather"), Heir("sister")]
     }
 ]
 

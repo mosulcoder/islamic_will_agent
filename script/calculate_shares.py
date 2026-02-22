@@ -124,7 +124,12 @@ class IslamicInheritanceCalculator:
         if "father" in active:
             shares["father"] = 1/6 if has_children else 0 # Takes residue later
         if "mother" in active:
-            shares["mother"] = 1/6 if (has_children or has_siblings) else 1/3
+            if not has_children and not has_siblings and "father" in active and ("husband" in active or "wife" in active):
+                spouse_share = shares.get("husband", 0) + shares.get("wife", 0)
+                shares["mother"] = (1.0 - spouse_share) / 3.0
+                self.log.append("Umariyyataini applied: Mother gets 1/3 of remainder after spouse.")
+            else:
+                shares["mother"] = 1/6 if (has_children or has_siblings) else 1/3
             
         # Grandfather (if no father)
         if "grandfather" in active and "father" not in active:
@@ -170,6 +175,23 @@ class IslamicInheritanceCalculator:
         if self.madhhab == "shafii" and "husband" in active and "mother" in active and uterine_bros >= 2 and full_bros > 0 and not has_children:
             self.log.append("Al-Mushtaraka applied (Shafi'i): Full brothers share with uterine brothers.")
             shares["shared_brothers"] = 1/3 
+
+        # Al-Akdariyyah Exception (Shafi'i)
+        is_akdariyyah = (
+            self.madhhab == "shafii" and 
+            "husband" in active and 
+            "mother" in active and 
+            "grandfather" in active and 
+            (active.get("sister", 0) == 1 or active.get("paternal_sister", 0) == 1) and
+            sum(active.values()) == 4
+        )
+        if is_akdariyyah:
+            self.log.append("Al-Akdariyyah Exception applied (Shafi'i).")
+            shares["husband"] = 3/9
+            shares["mother"] = 2/9
+            sister_key = "sister" if "sister" in active else "paternal_sister"
+            shares["grandfather"] = (4/9) * (2/3)
+            shares[sister_key] = (4/9) * (1/3)
 
         # 5. Al-Awl
         total_shares = sum(shares.values())

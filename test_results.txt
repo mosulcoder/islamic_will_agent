@@ -128,8 +128,8 @@ Status: Residue given to father.
 --- Scenario 17: Husband, Mother, Father ---
 Status: Residue given to father.
   Husband: 50.00% ($60,000.00)
-  Father: 16.67% ($20,000.00)
-  Mother: 33.33% ($40,000.00)
+  Father: 33.33% ($40,000.00)
+  Mother: 16.67% ($20,000.00)
   [Total Distribution: 100.00%]
 
 
@@ -445,6 +445,23 @@ Status: Radd (Return) applied to remaining heirs.
 --- Scenario 60: 1 Son, 1 Non-Muslim Daughter ---
 Status: Residue distributed to children.
   Son: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 61: Al-Akdariyyah (Shafi'i) - Husband, Mother, Grandfather, Full Sister ---
+Status: Standard Distribution
+  Husband: 33.33% ($40,000.00)
+  Mother: 22.22% ($26,666.67)
+  Grandfather: 29.63% ($35,555.56)
+  Sister: 14.81% ($17,777.78)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 62: Akdariyyah Family but Hanafi Rules - Husband, Mother, Grandfather, Full Sister ---
+Status: Residue given to grandfather.
+  Husband: 50.00% ($60,000.00)
+  Mother: 33.33% ($40,000.00)
+  Grandfather: 16.67% ($20,000.00)
   [Total Distribution: 100.00%]
 
 
