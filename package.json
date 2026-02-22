@@ -1,0 +1,24 @@
+{
+  "name": "islamic_will_agent",
+  "version": "1.0.0",
+  "description": "A Claude AI skill and reference toolkit that guides Muslims through creating a **Shariah-compliant, Tennessee-legally-enforceable Last Will & Testament**.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mosulcoder/islamic_will_agent.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/mosulcoder/islamic_will_agent/issues"
+  },
+  "homepage": "https://github.com/mosulcoder/islamic_will_agent#readme",
+  "dependencies": {
+    "docx": "^9.5.3"
+  }
+}

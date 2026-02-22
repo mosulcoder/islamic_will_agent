@@ -75,6 +75,10 @@ Collect:
 **Probate Estate (governed by this will):**
 - Estimated total gross value
 - Real property (land, home) — address(es) in Tennessee
+  - *If jointly owned with spouse, immediately ask: "How would you like to handle this jointly owned home in your estate plan?"*
+    - **Option A (Keep As-Is / JTWROS):** Home passes 100% to spouse automatically upon death. Bypasses Shariah distribution completely.
+    - **Option B (Convert to Tenancy by the Entirety - TBE):** Home passes 100% to spouse automatically. Protects against individual creditors in TN, but bypasses Shariah distribution.
+    - **Option C (Convert to Tenancy in Common - TIC):** 50% of the home value passes through this will per Islamic Law (*Mirath*). The other 50% is retained by the surviving spouse.
 - Personal property (vehicles, jewelry, household)
 - Business interests
 - Bank accounts (checking, savings)
@@ -140,7 +144,8 @@ Generate all applicable documents in text/markdown form:
 After generating the text documents, output a JSON data block so the user can generate formatted Word (.docx) files. Tell the user:
 
 > "To generate formatted Word documents, save the JSON below as `will_data.json` and run:
-> `python script/generate_docs.py will_data.json`"
+> `npm install docx` (if not already installed)
+> `node script/generate_docs.js will_data.json`"
 
 Then output the complete JSON block populated with all collected data, matching this schema exactly:
 
@@ -361,13 +366,13 @@ Life insurance, retirement accounts (401k, IRA, 403b), and joint tenancy propert
 
 ### Template A — Last Will and Testament
 
-Refer to the supporting file: `Tennessee_Will_Template.md`
+Refer to the supporting file: `reference/Tennessee/Tennessee_Will_Template.md`
 
 Use that template, filling all [BRACKETED FIELDS] with the user's specific information collected during the intake stages.
 
 ### Template B — Waiver of Elective Share
 
-Refer to the supporting file: `Tennessee_waiver_of_elective_share_template.md`
+Refer to the supporting file: `reference/Tennessee/Tennessee_waiver_of_elective_share_template.md`
 
 Populate: spouse name, testator name, county, and the specific Islamic share amount the spouse agrees to accept. Include all four rights being waived: Elective Share, Year's Support, Exempt Property, and Homestead.
 

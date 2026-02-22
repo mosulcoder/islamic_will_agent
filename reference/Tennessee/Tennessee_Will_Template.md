@@ -34,8 +34,12 @@ I was born on [DATE OF BIRTH] and reside at [FULL ADDRESS], [CITY], [COUNTY] Cou
 **3.1 Primary Executor:**
 I hereby appoint **[EXECUTOR FULL NAME]**, of [EXECUTOR ADDRESS], as the Executor (*Wasi*) of this Will. It is my preference that my Executor be a Muslim of good character who understands and respects my religious obligations.
 
+Address: _______________________________________
+
 **3.2 Alternate Executor:**
 If [EXECUTOR NAME] is unable or unwilling to serve, I appoint **[ALTERNATE EXECUTOR FULL NAME]**, of [ALTERNATE ADDRESS], as alternate Executor.
+
+Address: _______________________________________
 
 **3.3 Powers of Executor:**
 My Executor shall have full power to:
@@ -153,6 +157,16 @@ The remainder of my estate, after the payments and bequests described in Article
 
 ---
 
+**EXAMPLE D — Married with two daughters, no sons (Wife + 2 Daughters + Father + Mother):**
+
+(a) **Al-Aul (Proportional Reduction):** Because the total fixed shares exceed the whole estate (summing to 27/24), all shares are proportionally reduced (the denominator is increased to 27) in accordance with Islamic Law;
+(b) To my wife, **[WIFE NAME]**: Three parts of twenty-seven **(3/27 ≈ 11.1%)** of the net estate;
+(c) To my daughters collectively, sixteen parts of twenty-seven **(16/27 ≈ 59.3%)** of the net estate, divided equally among them;
+(d) To my father, **[FATHER NAME]**: Four parts of twenty-seven **(4/27 ≈ 14.8%)** of the net estate;
+(e) To my mother, **[MOTHER NAME]**: Four parts of twenty-seven **(4/27 ≈ 14.8%)** of the net estate;
+
+---
+
 **7.3 Predeceased Heir:**
 If any heir named above predeceases me, their share shall be redistributed among the surviving heirs according to the rules of Islamic Inheritance Law (*Fara'id*), not by representation (per stirpes), unless the rules of *Fara'id* specifically provide otherwise.
 
@@ -166,8 +180,12 @@ Any heir who is not a Muslim at the time of my death shall not receive a share o
 **8.1 Appointment:**
 If any of my children are minors (under age 18) at the time of my death, and if my spouse is also deceased or is otherwise unable to serve as guardian, I nominate **[GUARDIAN FULL NAME]**, of [GUARDIAN ADDRESS], [RELATIONSHIP TO CHILDREN], as Guardian of the person and property of my minor children.
 
+Address: _______________________________________
+
 **8.2 Alternate Guardian:**
 If [GUARDIAN NAME] is unable or unwilling to serve, I nominate **[ALTERNATE GUARDIAN FULL NAME]**, of [ALTERNATE ADDRESS], as alternate Guardian.
+
+Address: _______________________________________
 
 **8.3 Islamic Upbringing:**
 It is my express wish and fervent desire that my minor children be raised in the **Islamic faith (Sunni tradition)**, receive regular Islamic education, attend the masjid regularly, and be raised in a Muslim household. I request that Tennessee courts give full weight to this wish when evaluating any guardianship proceedings, consistent with T.C.A. § 36-6-106.

@@ -52,7 +52,9 @@ build() {
     # Add only the data files from script/ (not dev scripts or cache)
     zip -r "$ZIP_OUTPUT" \
         script/calculate_shares.py \
+        script/generate_docs.js \
         script/will_data_template.json \
+        package.json \
         -q
 
     local size

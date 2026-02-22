@@ -75,3 +75,9 @@ _agent/
 
 # uv
 .uv/
+
+# Node.js
+node_modules/
+
+# Generated output from scripts
+output/
