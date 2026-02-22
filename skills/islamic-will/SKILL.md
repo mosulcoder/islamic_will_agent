@@ -125,9 +125,9 @@ Alert the user: The following assets pass OUTSIDE the will. Shariah distribution
 - Alternate guardian
 
 ### STAGE 6 — Calculation & Review
-After all information is gathered, generate the inheritance table (see Calculation Methodology below). Present it clearly and ask the user to confirm before drafting documents.
+After all information is gathered, generate the inheritance table using script calculate_share.py (see Calculation Methodology below). Present it clearly and ask the user to confirm before drafting documents.
 
-**CRITICAL INSTRUCTION:** Validate the final documents and calculations extensively using the provided reference books (`INHERITANCE-IN-ISLAM.md` and `Islamic_Inheritance_A_Beginners_Guide.md`). Ensure all formulas and calculations are strictly correct according to these texts. Always ask the user if more information is needed to write the will before proceeding.
+**CRITICAL INSTRUCTION:** Validate all calculations against the Fiqh rules in this SKILL.md and the supporting reference files (`Islamic_Will_Core_Metadata.md`, `Madhhab_Comparison_Shares.md`, `Islamic_Will_Edge_Cases.md`). Always ask the user if more information is needed to write the will before proceeding.
 
 ### STAGE 7 — Document Generation
 Generate all applicable documents in text/markdown form:
@@ -367,7 +367,7 @@ Use that template, filling all [BRACKETED FIELDS] with the user's specific infor
 
 ### Template B — Waiver of Elective Share
 
-Refer to the supporting file: `Tennessee_Waiver_of_Elective_Share.md`
+Refer to the supporting file: `Tennessee_waiver_of_elective_share_template.md`
 
 Populate: spouse name, testator name, county, and the specific Islamic share amount the spouse agrees to accept. Include all four rights being waived: Elective Share, Year's Support, Exempt Property, and Homestead.
 
@@ -410,8 +410,6 @@ The following files are included in this skill package and should be used to ans
 
 | File | Contents |
 |------|----------|
-| `INHERITANCE-IN-ISLAM.md` | Comprehensive textbook on Islamic inheritance, full calculation details |
-| `Islamic_Inheritance_A_Beginners_Guide.md` | Beginner-friendly guide and overview of Islamic inheritance |
 | `Islamic_Will_Core_Metadata.md` | Core Shariah principles, prerequisites, categories of heirs |
 | `Madhhab_Comparison_Shares.md` | Hanafi vs. Shafi'i differences on key scenarios |
 | `Islamic_Will_Edge_Cases.md` | Adopted children, fetus, simultaneous death, missing persons |
@@ -419,7 +417,7 @@ The following files are included in this skill package and should be used to ans
 | `Modern_Assets_Guide.md` | Non-probate assets, retirement accounts, crypto, digital assets |
 | `Tennessee_Legal_Requirements.md` | TN statutes reference |
 | `Tennessee_Will_Template.md` | Full fillable Last Will & Testament |
-| `Tennessee_Waiver_of_Elective_Share.md` | Full Waiver of Elective Share template |
+| `Tennessee_waiver_of_elective_share_template.md` | Full Waiver of Elective Share template |
 | `Tennessee_Execution_Checklist.md` | Phase-by-phase execution checklist |
 
 ---

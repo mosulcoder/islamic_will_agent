@@ -28,13 +28,11 @@ If an impediment exists, the person is treated as if they do not exist for the p
 
 The estate must be processed in this strict order before any heir receives a penny:
 
-1. **Funeral & Burial (*Tajheez wa Takfeen*):** Reasonable, culturally appropriate expenses.
-2. **Debts (*Duyun*):**
-* *Religious:* Unpaid Zakat, Kaffarah, missed Hajj expenses, and unpaid *Mahr* (Dowry) owed to a wife.
-* *Secular:* Mortgages, hospital bills, loans, and credit cards.
-
-
-3. **Bequests (*Wasiyyah*):** Voluntary gifts limited to a maximum of **1/3** of the remaining net estate. *Crucial Rule:* A bequest cannot be made to an existing legal heir unless all other heirs consent after the testator's death.
+1. **Funeral & Burial (*Tajheez wa Takfeen*):** Reasonable, culturally appropriate expenses. On average, this can be between $3,000 and $8,000 depending on the masjid and burial plot.
+2. **Debts (*Duyun*):** The debts of the testator must be paid before any inheritance can be distributed. These debts include:
+a. *Religious:* Unpaid Zakat, Kaffarah, missed Hajj expenses, and unpaid *Mahr* (Dowry) owed to a wife.
+b. *Secular:* Mortgages, hospital bills, loans, and credit cards.
+3. *Bequests (Wasiyyah):* Voluntary gifts limited to a maximum of **1/3** of the remaining net estate. *Crucial Rule:* A bequest cannot be made to an existing legal heir unless all other heirs consent after the testator's death.
 4. **Inheritance (*Mirath*):** Distribution of the remainder to rightful heirs.
 
 #### 5. Categories of Heirs

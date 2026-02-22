@@ -41,11 +41,18 @@ build() {
     # Add SKILL.md at the root of the zip
     zip -j "$ZIP_OUTPUT" "$SKILL_DIR/SKILL.md" -q
     
-    # Add reference and script directories directly
+    # Add focused reference files only — exclude large PDF-converted textbooks
+    # and developer scripts that are not needed inside the skill
     zip -r "$ZIP_OUTPUT" \
         reference/ \
-        script/ \
-        README.md \
+        -q \
+        -x "reference/INHERITANCE-IN-ISLAM.md" \
+        -x "reference/Islamic_Inheritance_A_Beginners_Guide.md"
+
+    # Add only the data files from script/ (not dev scripts or cache)
+    zip -r "$ZIP_OUTPUT" \
+        script/calculate_shares.py \
+        script/will_data_template.json \
         -q
 
     local size
