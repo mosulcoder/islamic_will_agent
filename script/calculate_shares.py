@@ -110,7 +110,7 @@ class IslamicInheritanceCalculator:
 
         # 4. Zawil Furood (Fixed Shares)
         has_children = active.get("son", 0) > 0 or active.get("daughter", 0) > 0
-        has_siblings = sum(active.get(k, 0) for k in ["brother", "sister", "uterine_brother", "paternal_brother"]) >= 2
+        has_siblings = sum(active.get(k, 0) for k in ["brother", "sister", "uterine_brother", "uterine_sister", "paternal_brother", "paternal_sister"]) >= 2
         
         shares = {}
         
@@ -136,9 +136,37 @@ class IslamicInheritanceCalculator:
         if sons == 0 and daughters > 0:
             shares["daughter"] = 0.5 if daughters == 1 else 2/3
             
+        # Granddaughters (Son's Daughters)
+        grandsons = active.get("grandson", 0)
+        granddaughters = active.get("granddaughter", 0)
+        if granddaughters > 0 and sons == 0 and grandsons == 0:
+            if daughters == 0:
+                shares["granddaughter"] = 0.5 if granddaughters == 1 else 2/3
+            elif daughters == 1:
+                shares["granddaughter"] = 1/6 # Completes the 2/3 limit with the single daughter
+            
+        # Uterine siblings (if no children, father, grandfather)
+        uterine_sibs = active.get("uterine_brother", 0) + active.get("uterine_sister", 0)
+        if uterine_sibs > 0 and not has_children and "father" not in active and "grandfather" not in active:
+            shares["uterine_siblings"] = 1/6 if uterine_sibs == 1 else 1/3
+            
+        # Full sisters (if no full brothers, daughters, sons, father, grandfather)
+        full_bros = active.get("brother", 0)
+        full_sisters = active.get("sister", 0)
+        if full_sisters > 0 and full_bros == 0 and not has_children and "father" not in active and "grandfather" not in active:
+            shares["sister"] = 0.5 if full_sisters == 1 else 2/3
+            
+        # Paternal sisters (if no paternal brothers, full siblings, children, father, grandfather)
+        pat_bros = active.get("paternal_brother", 0)
+        pat_sisters = active.get("paternal_sister", 0)
+        if pat_sisters > 0 and pat_bros == 0 and full_bros == 0 and not has_children and "father" not in active and "grandfather" not in active:
+            if full_sisters == 0:
+                shares["paternal_sister"] = 0.5 if pat_sisters == 1 else 2/3
+            elif full_sisters == 1:
+                shares["paternal_sister"] = 1/6 # Completes the 2/3 limit
+            
         # Shafi'i Al-Mushtaraka scenario
         uterine_bros = active.get("uterine_brother", 0)
-        full_bros = active.get("brother", 0)
         if self.madhhab == "shafii" and "husband" in active and "mother" in active and uterine_bros >= 2 and full_bros > 0 and not has_children:
             self.log.append("Al-Mushtaraka applied (Shafi'i): Full brothers share with uterine brothers.")
             shares["shared_brothers"] = 1/3 
@@ -163,22 +191,46 @@ class IslamicInheritanceCalculator:
                 if sons > 0: shares["son"] = part_val * 2 * sons
                 if daughters > 0: shares["daughter"] = part_val * daughters
                 status = "Residue distributed to children."
-            elif "father" in active and not has_children:
+            elif grandsons > 0:
+                total_parts = (grandsons * 2) + granddaughters
+                part_val = remaining / total_parts
+                shares["grandson"] = part_val * 2 * grandsons
+                if granddaughters > 0: shares["granddaughter"] = part_val * granddaughters
+                status = "Residue distributed to grandchildren."
+            elif daughters > 0 and (full_sisters > 0 or pat_sisters > 0):
+                if full_sisters > 0:
+                    shares["sister"] = remaining
+                    status = "Residue given to full sisters (with daughters)."
+                else:
+                    shares["paternal_sister"] = remaining
+                    status = "Residue given to paternal sisters (with daughters)."
+            elif "father" in active:
                 shares["father"] = shares.get("father", 0) + remaining
                 status = "Residue given to father."
             elif "grandfather" in active and "brother" in active and self.madhhab == "shafii":
-                # Shafii Muqasama simplified
                 total_males = active["grandfather"] + active["brother"]
                 part = remaining / total_males
                 shares["grandfather"] = shares.get("grandfather", 0) + part * active["grandfather"]
                 shares["brother"] = shares.get("brother", 0) + part * active["brother"]
                 status = "Residue shared between Grandfather and Brothers (Shafi'i Muqasama)."
-            elif "grandfather" in active and not has_children:
+            elif "grandfather" in active:
                 shares["grandfather"] = shares.get("grandfather", 0) + remaining
                 status = "Residue given to grandfather."
             elif full_bros > 0:
-                shares["brother"] = remaining
-                status = "Residue given to full brothers."
+                total_parts = (full_bros * 2) + full_sisters
+                part_val = remaining / total_parts
+                shares["brother"] = part_val * 2 * full_bros
+                if full_sisters > 0: shares["sister"] = part_val * full_sisters
+                status = "Residue given to full siblings."
+            elif pat_bros > 0:
+                total_parts = (pat_bros * 2) + pat_sisters
+                part_val = remaining / total_parts
+                shares["paternal_brother"] = part_val * 2 * pat_bros
+                if pat_sisters > 0: shares["paternal_sister"] = part_val * pat_sisters
+                status = "Residue given to paternal siblings."
+            elif active.get("paternal_uncle", 0) > 0:
+                shares["paternal_uncle"] = remaining
+                status = "Residue given to paternal uncles."
             else:
                 # 7. Radd
                 status = "Radd (Return) applied to remaining heirs."

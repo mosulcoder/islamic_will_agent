@@ -1,0 +1,464 @@
+================ ISLAMIC INHERITANCE TEST SCENARIOS ================
+
+--- Scenario 1: Husband and Father (No children, no mother) ---
+Status: Residue given to father.
+  Husband: 50.00% ($60,000.00)
+  Father: 50.00% ($60,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 2: Wife, 1 Son, 1 Daughter ---
+Status: Residue distributed to children.
+  Wife: 12.50% ($15,000.00)
+  Son: 58.33% ($70,000.00)
+  Daughter: 29.17% ($35,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 3: 2 Wives, 3 Sons, 2 Daughters, Father, Mother ---
+Status: Residue distributed to children.
+  Wife (2): 12.50% ($15,000.00)
+  Father: 16.67% ($20,000.00)
+  Mother: 16.67% ($20,000.00)
+  Son (3): 40.63% ($48,750.00)
+  Daughter (2): 13.54% ($16,250.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 4: The 'Aul' Case (Husband, 2 Daughters, Father, Mother) ---
+Status: Aul Applied (Total shares 1.25 exceeded 1.0)
+  Husband: 20.00% ($24,000.00)
+  Father: 13.33% ($16,000.00)
+  Mother: 13.33% ($16,000.00)
+  Daughter (2): 53.33% ($64,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 5: 1 Daughter, Mother, Father (No sons) ---
+Status: Residue given to father.
+  Father: 33.33% ($40,000.00)
+  Mother: 16.67% ($20,000.00)
+  Daughter: 50.00% ($60,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 6: Husband, Mother, Full Brother (Kalala) ---
+Status: Residue given to full siblings.
+  Husband: 50.00% ($60,000.00)
+  Mother: 33.33% ($40,000.00)
+  Brother: 16.67% ($20,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 7: 4 Wives, 4 Daughters, Father, Mother ---
+Status: Aul Applied (Total shares 1.12 exceeded 1.0)
+  Wife (4): 11.11% ($13,333.33)
+  Father: 14.81% ($17,777.78)
+  Mother: 14.81% ($17,777.78)
+  Daughter (4): 59.26% ($71,111.11)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 8: Only 1 Son ---
+Status: Residue distributed to children.
+  Son: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 9: Only Father and Mother ---
+Status: Residue given to father.
+  Father: 66.67% ($80,000.00)
+  Mother: 33.33% ($40,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 10: Husband, 1 Daughter, Paternal Grandfather (no father) ---
+Status: Residue given to grandfather.
+  Husband: 25.00% ($30,000.00)
+  Grandfather: 25.00% ($30,000.00)
+  Daughter: 50.00% ($60,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 11: 1 Wife, Mother, 2 Consanguine Brothers (Paternal Brothers) ---
+Status: Residue given to paternal siblings.
+  Wife: 25.00% ($30,000.00)
+  Mother: 16.67% ($20,000.00)
+  Paternal_brother (2): 58.33% ($70,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 12: Fetus Case (Shafi'i) ---
+Status: Residue distributed to children.
+  Wife: 12.50% ($15,000.00)
+  Father: 16.67% ($20,000.00)
+  Son (2): 70.83% ($85,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 13: 1 Wife, 1 Daughter, Paternal Uncle ---
+Status: Residue given to paternal uncles.
+  Wife: 12.50% ($15,000.00)
+  Daughter: 50.00% ($60,000.00)
+  Paternal_uncle: 37.50% ($45,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 14: 1 Husband, 1 Son, 1 Grandson ---
+Status: Residue distributed to children.
+  Husband: 25.00% ($30,000.00)
+  Son: 75.00% ($90,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 15: 1 Husband, 1 Grandson (No Son) ---
+Status: Residue distributed to grandchildren.
+  Husband: 50.00% ($60,000.00)
+  Grandson: 50.00% ($60,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 16: Father, Mother, 1 Brother, 1 Sister ---
+Status: Residue given to father.
+  Father: 66.67% ($80,000.00)
+  Mother: 33.33% ($40,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 17: Husband, Mother, Father ---
+Status: Residue given to father.
+  Husband: 50.00% ($60,000.00)
+  Father: 16.67% ($20,000.00)
+  Mother: 33.33% ($40,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 18: Husband, Mother, Paternal Grandfather ---
+Status: Residue given to grandfather.
+  Husband: 50.00% ($60,000.00)
+  Mother: 33.33% ($40,000.00)
+  Grandfather: 16.67% ($20,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 19: Wife, 2 Daughters, Mother, Father ---
+Status: Aul Applied (Total shares 1.12 exceeded 1.0)
+  Wife: 11.11% ($13,333.33)
+  Father: 14.81% ($17,777.78)
+  Mother: 14.81% ($17,777.78)
+  Daughter (2): 59.26% ($71,111.11)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 20: 3 Daughters, 1 Paternal Uncle ---
+Status: Residue given to paternal uncles.
+  Daughter (3): 66.67% ($80,000.00)
+  Paternal_uncle: 33.33% ($40,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 21: Wife, 1 Full Sister, 1 Paternal Sister ---
+Status: Radd (Return) applied to remaining heirs.
+  Wife: 25.00% ($30,000.00)
+  Sister: 56.25% ($67,500.00)
+  Paternal_sister: 18.75% ($22,500.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 22: Husband, 1 Full Sister, 1 Uterine Brother ---
+Status: Aul Applied (Total shares 1.17 exceeded 1.0)
+  Husband: 42.86% ($51,428.57)
+  Uterine_siblings: 14.29% ($17,142.86)
+  Sister: 42.86% ($51,428.57)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 23: 1 Daughter, 1 Son's Daughter ---
+Status: Radd (Return) applied to remaining heirs.
+  Daughter: 75.00% ($90,000.00)
+  Granddaughter: 25.00% ($30,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 24: 2 Daughters, 1 Son's Daughter ---
+Status: Radd (Return) applied to remaining heirs.
+  Daughter (2): 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 25: 2 Daughters, 1 Son's Daughter, 1 Son's Son ---
+Status: Residue distributed to grandchildren.
+  Daughter (2): 66.67% ($80,000.00)
+  Grandson: 22.22% ($26,666.67)
+  Granddaughter: 11.11% ($13,333.33)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 26: Wife, 1 Daughter, 1 Full Sister ---
+Status: Residue given to full sisters (with daughters).
+  Wife: 12.50% ($15,000.00)
+  Daughter: 50.00% ($60,000.00)
+  Sister: 37.50% ($45,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 27: Mother, 2 Uterine Sisters ---
+Status: Radd (Return) applied to remaining heirs.
+  Mother: 33.33% ($40,000.00)
+  Uterine_siblings: 66.67% ($80,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 28: 1 Full Sister, 1 Paternal Sister, 1 Uterine Brother ---
+Status: Radd (Return) applied to remaining heirs.
+  Uterine_siblings: 20.00% ($24,000.00)
+  Sister: 60.00% ($72,000.00)
+  Paternal_sister: 20.00% ($24,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 29: Wife, Mother, 1 Brother (Shafi'i) ---
+Status: Residue given to full siblings.
+  Wife: 25.00% ($30,000.00)
+  Mother: 33.33% ($40,000.00)
+  Brother: 41.67% ($50,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 30: Wife, Mother, 2 Brothers ---
+Status: Residue given to full siblings.
+  Wife: 25.00% ($30,000.00)
+  Mother: 16.67% ($20,000.00)
+  Brother (2): 58.33% ($70,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 31: 4 Wives, 1 Son ---
+Status: Residue distributed to children.
+  Wife (4): 12.50% ($15,000.00)
+  Son: 87.50% ($105,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 32: Husband, 2 Full Sisters ---
+Status: Aul Applied (Total shares 1.17 exceeded 1.0)
+  Husband: 42.86% ($51,428.57)
+  Sister (2): 57.14% ($68,571.43)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 33: Wife, 2 Full Sisters, Mother ---
+Status: Aul Applied (Total shares 1.08 exceeded 1.0)
+  Wife: 23.08% ($27,692.31)
+  Mother: 15.38% ($18,461.54)
+  Sister (2): 61.54% ($73,846.15)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 34: Husband, Mother, 2 Uterine Brothers ---
+Status: Standard Distribution
+  Husband: 50.00% ($60,000.00)
+  Mother: 16.67% ($20,000.00)
+  Uterine_siblings: 33.33% ($40,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 35: Husband, Mother, 2 Uterine Brothers, 1 Full Brother (Shafi'i - Al-Mushtaraka) ---
+Status: Aul Applied (Total shares 1.33 exceeded 1.0)
+  Husband: 37.50% ($45,000.00)
+  Mother: 12.50% ($15,000.00)
+  Uterine_siblings: 25.00% ($30,000.00)
+  Shared_brothers: 25.00% ($30,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 36: Husband, Mother, 2 Uterine Brothers, 1 Full Brother (Hanafi - No Mushtaraka) ---
+Status: Standard Distribution
+  Husband: 50.00% ($60,000.00)
+  Mother: 16.67% ($20,000.00)
+  Uterine_siblings: 33.33% ($40,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 37: 1 Daughter, Mother, 1 Brother ---
+Status: Residue given to full siblings.
+  Mother: 16.67% ($20,000.00)
+  Daughter: 50.00% ($60,000.00)
+  Brother: 33.33% ($40,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 38: 2 Daughters, Mother, Father ---
+Status: Standard Distribution
+  Father: 16.67% ($20,000.00)
+  Mother: 16.67% ($20,000.00)
+  Daughter (2): 66.67% ($80,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 39: 1 Paternal Grandfather, 1 Full Sister (Hanafi) ---
+Status: Residue given to grandfather.
+  Grandfather: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 40: 1 Paternal Grandfather, 1 Full Sister (Shafi'i) ---
+Status: Residue given to grandfather.
+  Grandfather: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 41: Wife, 1 Paternal Grandfather, 2 Full Brothers (Hanafi) ---
+Status: Residue given to grandfather.
+  Wife: 25.00% ($30,000.00)
+  Grandfather: 75.00% ($90,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 42: Wife, 1 Paternal Grandfather, 2 Full Brothers (Shafi'i) ---
+Status: Residue shared between Grandfather and Brothers (Shafi'i Muqasama).
+  Wife: 25.00% ($30,000.00)
+  Grandfather: 25.00% ($30,000.00)
+  Brother (2): 50.00% ($60,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 43: Husband, 1 Daughter, 1 Son's Daughter ---
+Status: Radd (Return) applied to remaining heirs.
+  Husband: 25.00% ($30,000.00)
+  Daughter: 56.25% ($67,500.00)
+  Granddaughter: 18.75% ($22,500.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 44: Wife, 3 Daughters, Mother ---
+Status: Radd (Return) applied to remaining heirs.
+  Wife: 12.50% ($15,000.00)
+  Mother: 17.50% ($21,000.00)
+  Daughter (3): 70.00% ($84,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 45: Father, 1 Full Sister, 1 Consanguine Brother ---
+Status: Residue given to father.
+  Father: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 46: Mother, 1 Full Brother, 1 Uterine Brother ---
+Status: Residue given to full siblings.
+  Mother: 16.67% ($20,000.00)
+  Uterine_siblings: 16.67% ($20,000.00)
+  Brother: 66.67% ($80,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 47: 1 Son, 1 Adopted Son ---
+Status: Residue distributed to children.
+  Son: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 48: 1 Daughter, 1 Step-Son ---
+Status: Radd (Return) applied to remaining heirs.
+  Daughter: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 49: Wife, 1 Son (Missing) ---
+Status: Residue distributed to children.
+  Wife: 12.50% ($15,000.00)
+  Son: 87.50% ($105,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 50: Husband, 1 Son (Killer) ---
+Status: Residue distributed to children.
+  Husband: 25.00% ($30,000.00)
+  Son: 75.00% ($90,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 51: Mother, 1 Daughter (Killer, Shafi'i) ---
+Status: Radd (Return) applied to remaining heirs.
+  Mother: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 52: 1 Daughter, Paternal Uncle's Son ---
+Status: Radd (Return) applied to remaining heirs.
+  Daughter: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 53: 2 Daughters, 1 Full Sister, 1 Paternal Sister ---
+Status: Residue given to full sisters (with daughters).
+  Daughter (2): 66.67% ($80,000.00)
+  Sister: 33.33% ($40,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 54: Father, 1 Uterine Brother, 1 Uterine Sister ---
+Status: Residue given to father.
+  Father: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 55: Wife, Mother, 1 Uterine Brother ---
+Status: Radd (Return) applied to remaining heirs.
+  Wife: 25.00% ($30,000.00)
+  Mother: 50.00% ($60,000.00)
+  Uterine_siblings: 25.00% ($30,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 56: Husband, 1 Adopted Daughter ---
+Status: Radd (Return) applied to remaining heirs.
+  Husband: 50.00% ($60,000.00)
+  Bayt_al_mal: 50.00% ($60,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 57: Paternal Grandfather, 1 Daughter, 1 Paternal Uncle ---
+Status: Residue given to grandfather.
+  Grandfather: 50.00% ($60,000.00)
+  Daughter: 50.00% ($60,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 58: Wife, Mother, 1 Consanguine Sister ---
+Status: Aul Applied (Total shares 1.08 exceeded 1.0)
+  Wife: 23.08% ($27,692.31)
+  Mother: 30.77% ($36,923.08)
+  Paternal_sister: 46.15% ($55,384.62)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 59: Husband, 1 Consanguine Brother, 1 Consanguine Sister ---
+Status: Residue given to paternal siblings.
+  Husband: 50.00% ($60,000.00)
+  Paternal_brother: 33.33% ($40,000.00)
+  Paternal_sister: 16.67% ($20,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 60: Mother, 1 Full Brother, 1 Consanguine Brother ---
+Status: Residue given to full siblings.
+  Mother: 16.67% ($20,000.00)
+  Brother: 83.33% ($100,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 61: Wife, 1 Uterine Brother, 1 Uterine Sister ---
+Status: Radd (Return) applied to remaining heirs.
+  Wife: 25.00% ($30,000.00)
+  Uterine_siblings: 75.00% ($90,000.00)
+  [Total Distribution: 100.00%]
+
+
+--- Scenario 62: 1 Son, 1 Non-Muslim Daughter ---
+Status: Residue distributed to children.
+  Son: 100.00% ($120,000.00)
+  [Total Distribution: 100.00%]
+
+
