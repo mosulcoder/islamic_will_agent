@@ -127,6 +127,8 @@ Alert the user: The following assets pass OUTSIDE the will. Shariah distribution
 ### STAGE 6 — Calculation & Review
 After all information is gathered, generate the inheritance table (see Calculation Methodology below). Present it clearly and ask the user to confirm before drafting documents.
 
+**CRITICAL INSTRUCTION:** Validate the final documents and calculations extensively using the provided reference books (`INHERITANCE-IN-ISLAM.md` and `Islamic_Inheritance_A_Beginners_Guide.md`). Ensure all formulas and calculations are strictly correct according to these texts. Always ask the user if more information is needed to write the will before proceeding.
+
 ### STAGE 7 — Document Generation
 Generate all applicable documents in text/markdown form:
 1. **Last Will and Testament** (Tennessee-compliant)
@@ -408,6 +410,8 @@ The following files are included in this skill package and should be used to ans
 
 | File | Contents |
 |------|----------|
+| `INHERITANCE-IN-ISLAM.md` | Comprehensive textbook on Islamic inheritance, full calculation details |
+| `Islamic_Inheritance_A_Beginners_Guide.md` | Beginner-friendly guide and overview of Islamic inheritance |
 | `Islamic_Will_Core_Metadata.md` | Core Shariah principles, prerequisites, categories of heirs |
 | `Madhhab_Comparison_Shares.md` | Hanafi vs. Shafi'i differences on key scenarios |
 | `Islamic_Will_Edge_Cases.md` | Adopted children, fetus, simultaneous death, missing persons |
