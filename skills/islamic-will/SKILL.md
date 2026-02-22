@@ -128,11 +128,78 @@ Alert the user: The following assets pass OUTSIDE the will. Shariah distribution
 After all information is gathered, generate the inheritance table (see Calculation Methodology below). Present it clearly and ask the user to confirm before drafting documents.
 
 ### STAGE 7 — Document Generation
-Generate all applicable documents:
+Generate all applicable documents in text/markdown form:
 1. **Last Will and Testament** (Tennessee-compliant)
 2. **Waiver of Elective Share** (if married)
 3. **Tennessee Execution Checklist**
 4. **Beneficiary Designation Reminder** (for non-probate assets)
+
+### STAGE 8 — Word Document Data Export
+After generating the text documents, output a JSON data block so the user can generate formatted Word (.docx) files. Tell the user:
+
+> "To generate formatted Word documents, save the JSON below as `will_data.json` and run:
+> `python script/generate_docs.py will_data.json`"
+
+Then output the complete JSON block populated with all collected data, matching this schema exactly:
+
+```json
+{
+  "testator": {
+    "full_name": "[Full Legal Name]",
+    "county":    "[County Name]",
+    "dob":       "[Date of Birth]",
+    "madhhab":   "[Hanafi or Shafi'i]"
+  },
+  "spouse": {
+    "full_name":     "[Spouse Full Name]",
+    "is_muslim":     true,
+    "years_married": 0
+  },
+  "heirs": {
+    "daughters":         ["[Daughter 1]", "[Daughter 2]"],
+    "sons":              [],
+    "father":            { "name": "[Father Name]", "alive": true },
+    "mother":            { "name": "[Mother Name]", "alive": true },
+    "siblings_excluded": true
+  },
+  "estate": {
+    "gross_total":      0,
+    "probate":          0,
+    "home":             { "value": 0, "joint": true },
+    "retirement_401k":  0,
+    "funeral_expenses": 0,
+    "debts":            0
+  },
+  "wasiyyah": [
+    { "recipient": "[Name]", "amount": 0, "purpose": "[Purpose]" }
+  ],
+  "executor": {
+    "primary":   "[Primary Executor]",
+    "alternate": "[Alternate Executor]"
+  },
+  "guardian": {
+    "primary":   "[Primary Guardian]",
+    "alternate": "[Alternate Guardian]"
+  },
+  "distribution": {
+    "madhhab":         "[Hanafi or Shafi'i]",
+    "aul_applied":     false,
+    "aul_denominator": 1,
+    "net_mirath":      0,
+    "exclusion_note":  "[Description of any Hajb exclusions]",
+    "shares": [
+      {
+        "heir":         "[Name]",
+        "relationship": "[Wife/Son/Daughter/Father/Mother]",
+        "fraction_num": 1,
+        "fraction_den": 1,
+        "percentage":   0.0,
+        "amount":       0
+      }
+    ]
+  }
+}
+```
 
 ---
 

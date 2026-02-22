@@ -1,0 +1,57 @@
+{
+  "testator": {
+    "full_name": "Zaid Altalib",
+    "county":    "Davidson County",
+    "dob":       "August 25, 1980",
+    "madhhab":   "Hanafi"
+  },
+  "spouse": {
+    "full_name":     "Isra Brifkani",
+    "is_muslim":     true,
+    "years_married": 23
+  },
+  "heirs": {
+    "daughters":         ["Ayah Altalib", "Leena Altalib"],
+    "sons":              [],
+    "father":            { "name": "[Father's Full Legal Name]", "alive": true },
+    "mother":            { "name": "[Mother's Full Legal Name]", "alive": true },
+    "siblings_excluded": true
+  },
+  "estate": {
+    "gross_total":      1900000,
+    "probate":           400000,
+    "home":             { "value": 750000, "joint": true },
+    "retirement_401k":   750000,
+    "funeral_expenses":    5000,
+    "debts":                  0
+  },
+  "wasiyyah": [
+    {
+      "recipient": "[Waqf Organization — e.g., Islamic Relief USA, Zakat Foundation of America]",
+      "amount":    100000,
+      "purpose":   "Waqf (Islamic Endowment) in Mosul, Iraq"
+    }
+  ],
+  "executor": {
+    "primary":   "Isra Brifkani",
+    "alternate": "Zaid Brifkani"
+  },
+  "guardian": {
+    "primary":   "Zahra Brifkani",
+    "alternate": "Zeena Altalib"
+  },
+  "distribution": {
+    "madhhab":         "Hanafi",
+    "aul_applied":     true,
+    "aul_denominator": 27,
+    "net_mirath":      295000,
+    "exclusion_note":  "Siblings (1 brother, 2 sisters) are excluded by the living father under Hanafi Hajb Hirman rules.",
+    "shares": [
+      { "heir": "Isra Brifkani",  "relationship": "Wife",     "fraction_num": 3, "fraction_den": 27, "percentage": 11.11, "amount": 32778 },
+      { "heir": "Ayah Altalib",   "relationship": "Daughter", "fraction_num": 8, "fraction_den": 27, "percentage": 29.63, "amount": 87407 },
+      { "heir": "Leena Altalib",  "relationship": "Daughter", "fraction_num": 8, "fraction_den": 27, "percentage": 29.63, "amount": 87407 },
+      { "heir": "[Father Name]",  "relationship": "Father",   "fraction_num": 4, "fraction_den": 27, "percentage": 14.81, "amount": 43704 },
+      { "heir": "[Mother Name]",  "relationship": "Mother",   "fraction_num": 4, "fraction_den": 27, "percentage": 14.81, "amount": 43704 }
+    ]
+  }
+}

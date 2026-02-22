@@ -1,0 +1,62 @@
+{
+  "_comment": "Islamic Will data file — produced by /islamic-will skill (Stage 8). Fill all fields, then run: python script/generate_docs.py will_data.json",
+
+  "testator": {
+    "full_name": "",
+    "county":    "",
+    "dob":       "",
+    "madhhab":   "Hanafi"
+  },
+
+  "spouse": {
+    "full_name":     "",
+    "is_muslim":     true,
+    "years_married": 0
+  },
+
+  "heirs": {
+    "daughters":        [],
+    "sons":             [],
+    "father":           { "name": "", "alive": true  },
+    "mother":           { "name": "", "alive": true  },
+    "siblings_excluded": true
+  },
+
+  "estate": {
+    "gross_total":       0,
+    "probate":           0,
+    "home":              { "value": 0, "joint": true },
+    "retirement_401k":   0,
+    "funeral_expenses":  5000,
+    "debts":             0
+  },
+
+  "wasiyyah": [
+    {
+      "recipient": "",
+      "amount":    0,
+      "purpose":   ""
+    }
+  ],
+
+  "executor": {
+    "primary":   "",
+    "alternate": ""
+  },
+
+  "guardian": {
+    "primary":   "",
+    "alternate": ""
+  },
+
+  "distribution": {
+    "madhhab":          "Hanafi",
+    "aul_applied":      false,
+    "aul_denominator":  1,
+    "net_mirath":       0,
+    "exclusion_note":   "",
+    "shares": [
+      { "heir": "", "relationship": "", "fraction_num": 1, "fraction_den": 1, "percentage": 0.0, "amount": 0 }
+    ]
+  }
+}

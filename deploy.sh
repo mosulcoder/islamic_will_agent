@@ -74,7 +74,12 @@ build() {
     echo -e "${BLUE}[build]${NC} Packaging zip..."
     rm -f "$ZIP_OUTPUT"
     cd "$SCRIPT_DIR"
-    zip -r "$ZIP_OUTPUT" skills/islamic-will/ README.md -q
+    zip -r "$ZIP_OUTPUT" \
+        skills/islamic-will/ \
+        script/generate_docs.py \
+        script/will_data_template.json \
+        README.md \
+        -q
 
     local size
     size=$(ls -lh "$ZIP_OUTPUT" | awk '{print $5}')
