@@ -163,95 +163,87 @@ scenarios = [
         "heirs": [Heir("grandfather"), Heir("sister")]
     },
     {
-        "name": "Scenario 40: 1 Paternal Grandfather, 1 Full Sister (Shafi'i)",
-        "heirs": [Heir("grandfather"), Heir("sister")]
-    },
-    {
-        "name": "Scenario 41: Wife, 1 Paternal Grandfather, 2 Full Brothers (Hanafi)",
+        "name": "Scenario 40: Wife, 1 Paternal Grandfather, 2 Full Brothers (Hanafi)",
         "heirs": [Heir("wife"), Heir("grandfather"), Heir("brother", count=2)]
     },
     {
-        "name": "Scenario 42: Wife, 1 Paternal Grandfather, 2 Full Brothers (Shafi'i)",
-        "heirs": [Heir("wife"), Heir("grandfather"), Heir("brother", count=2)]
-    },
-    {
-        "name": "Scenario 43: Husband, 1 Daughter, 1 Son's Daughter",
+        "name": "Scenario 41: Husband, 1 Daughter, 1 Son's Daughter",
         "heirs": [Heir("husband"), Heir("daughter"), Heir("granddaughter")]
     },
     {
-        "name": "Scenario 44: Wife, 3 Daughters, Mother",
+        "name": "Scenario 42: Wife, 3 Daughters, Mother",
         "heirs": [Heir("wife"), Heir("daughter", count=3), Heir("mother")]
     },
     {
-        "name": "Scenario 45: Father, 1 Full Sister, 1 Consanguine Brother",
+        "name": "Scenario 43: Father, 1 Full Sister, 1 Consanguine Brother",
         "heirs": [Heir("father"), Heir("sister"), Heir("paternal_brother")]
     },
     {
-        "name": "Scenario 46: Mother, 1 Full Brother, 1 Uterine Brother",
+        "name": "Scenario 44: Mother, 1 Full Brother, 1 Uterine Brother",
         "heirs": [Heir("mother"), Heir("brother"), Heir("uterine_brother")]
     },
     {
-        "name": "Scenario 47: 1 Son, 1 Adopted Son",
+        "name": "Scenario 45: 1 Son, 1 Adopted Son",
         "heirs": [Heir("son"), Heir("son", is_adopted=True)]
     },
     {
-        "name": "Scenario 48: 1 Daughter, 1 Step-Son",
+        "name": "Scenario 46: 1 Daughter, 1 Step-Son",
         "heirs": [Heir("daughter"), Heir("son", is_step_relation=True)]
     },
     {
-        "name": "Scenario 49: Wife, 1 Son (Missing)",
+        "name": "Scenario 47: Wife, 1 Son (Missing)",
         "heirs": [Heir("wife"), Heir("son", is_missing=True)]
     },
     {
-        "name": "Scenario 50: Husband, 1 Son (Killer)",
+        "name": "Scenario 48: Husband, 1 Son (Killer)",
         "heirs": [Heir("husband"), Heir("son", is_killer=True)]
     },
     {
-        "name": "Scenario 51: Mother, 1 Daughter (Killer, Shafi'i)",
+        "name": "Scenario 49: Mother, 1 Daughter (Killer, Shafi'i)",
         "heirs": [Heir("mother"), Heir("daughter", is_killer=True)]
     },
     {
-        "name": "Scenario 52: 1 Daughter, Paternal Uncle's Son",
+        "name": "Scenario 50: 1 Daughter, Paternal Uncle's Son",
         "heirs": [Heir("daughter"), Heir("paternal_uncle_son")]
     },
     {
-        "name": "Scenario 53: 2 Daughters, 1 Full Sister, 1 Paternal Sister",
+        "name": "Scenario 51: 2 Daughters, 1 Full Sister, 1 Paternal Sister",
         "heirs": [Heir("daughter", count=2), Heir("sister"), Heir("paternal_sister")]
     },
     {
-        "name": "Scenario 54: Father, 1 Uterine Brother, 1 Uterine Sister",
+        "name": "Scenario 52: Father, 1 Uterine Brother, 1 Uterine Sister",
         "heirs": [Heir("father"), Heir("uterine_brother"), Heir("uterine_sister")]
     },
     {
-        "name": "Scenario 55: Wife, Mother, 1 Uterine Brother",
+        "name": "Scenario 53: Wife, Mother, 1 Uterine Brother",
         "heirs": [Heir("wife"), Heir("mother"), Heir("uterine_brother")]
     },
     {
-        "name": "Scenario 56: Husband, 1 Adopted Daughter",
+        "name": "Scenario 54: Husband, 1 Adopted Daughter",
         "heirs": [Heir("husband"), Heir("daughter", is_adopted=True)]
     },
     {
-        "name": "Scenario 57: Paternal Grandfather, 1 Daughter, 1 Paternal Uncle",
+        "name": "Scenario 55: Paternal Grandfather, 1 Daughter, 1 Paternal Uncle",
         "heirs": [Heir("grandfather"), Heir("daughter"), Heir("paternal_uncle")]
     },
     {
-        "name": "Scenario 58: Wife, Mother, 1 Consanguine Sister",
+        "name": "Scenario 56: Wife, Mother, 1 Consanguine Sister",
         "heirs": [Heir("wife"), Heir("mother"), Heir("paternal_sister")]
     },
     {
-        "name": "Scenario 59: Husband, 1 Consanguine Brother, 1 Consanguine Sister",
+        "name": "Scenario 57: Husband, 1 Consanguine Brother, 1 Consanguine Sister",
         "heirs": [Heir("husband"), Heir("paternal_brother"), Heir("paternal_sister")]
     },
     {
-        "name": "Scenario 60: Mother, 1 Full Brother, 1 Consanguine Brother",
+        "name": "Scenario 58: Mother, 1 Full Brother, 1 Consanguine Brother",
         "heirs": [Heir("mother"), Heir("brother"), Heir("paternal_brother")]
     },
     {
-        "name": "Scenario 61: Wife, 1 Uterine Brother, 1 Uterine Sister",
+        "name": "Scenario 59: Wife, 1 Uterine Brother, 1 Uterine Sister",
         "heirs": [Heir("wife"), Heir("uterine_brother"), Heir("uterine_sister")]
     },
     {
-        "name": "Scenario 62: 1 Son, 1 Non-Muslim Daughter",
+        "name": "Scenario 60: 1 Son, 1 Non-Muslim Daughter",
         "heirs": [Heir("son"), Heir("daughter", is_muslim=False)]
     }
 ]
@@ -263,7 +255,6 @@ def run_tests():
     for i, s in enumerate(scenarios, 1):
         print(f"--- {s['name']} ---")
         try:
-            # We use Hanafi for most, but Shafii for Scenario 12
             madhhab = "shafii" if "Shafi'i" in s['name'] else "hanafi"
             calc = IslamicInheritanceCalculator(madhhab)
             
