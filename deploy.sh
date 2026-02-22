@@ -24,19 +24,6 @@ RED='\033[0;31m'
 BOLD='\033[1m'
 NC='\033[0m'
 
-# ── Source → Destination map ─────────────────────────────────────────────────
-# Each entry: "source_path|destination_filename_in_skill_dir"
-SYNC_FILES=(
-    "reference/Islamic_Will_Core_Metadata.md|Islamic_Will_Core_Metadata.md"
-    "reference/Madhhab_Comparison_Shares.md|Madhhab_Comparison_Shares.md"
-    "reference/Islamic_Will_Edge_Cases.md|Islamic_Will_Edge_Cases.md"
-    "reference/Glossary.md|Glossary.md"
-    "reference/Modern_Assets_Guide.md|Modern_Assets_Guide.md"
-    "reference/Tennessee/Tennessee_Legal_Requirements.md|Tennessee_Legal_Requirements.md"
-    "reference/Tennessee/Tennessee_Will_Template.md|Tennessee_Will_Template.md"
-    "reference/Tennessee/Tennessee_waiver_of_elective_share_template.md|Tennessee_Waiver_of_Elective_Share.md"
-    "reference/Tennessee/Tennessee_Execution_Checklist.md|Tennessee_Execution_Checklist.md"
-)
 
 # ── Watched paths (for fswatch / polling) ────────────────────────────────────
 WATCH_PATHS=(
@@ -47,37 +34,17 @@ WATCH_PATHS=(
 
 # ── Build ─────────────────────────────────────────────────────────────────────
 build() {
-    echo -e "${BLUE}[build]${NC} Syncing reference files → skills/islamic-will/"
-
-    local errors=0
-    for entry in "${SYNC_FILES[@]}"; do
-        local src="${entry%%|*}"
-        local dst_name="${entry##*|}"
-        local src_path="$SCRIPT_DIR/$src"
-        local dst_path="$SKILL_DIR/$dst_name"
-
-        if [ ! -f "$src_path" ]; then
-            echo -e "  ${RED}✗${NC} Missing: $src"
-            errors=$((errors + 1))
-            continue
-        fi
-
-        cp "$src_path" "$dst_path"
-        echo -e "  ${GREEN}✓${NC} $src → $dst_name"
-    done
-
-    if [ "$errors" -gt 0 ]; then
-        echo -e "${RED}[build]${NC} $errors file(s) missing — fix paths above before zipping."
-        return 1
-    fi
-
     echo -e "${BLUE}[build]${NC} Packaging zip..."
     rm -f "$ZIP_OUTPUT"
     cd "$SCRIPT_DIR"
+    
+    # Add SKILL.md at the root of the zip
+    zip -j "$ZIP_OUTPUT" "$SKILL_DIR/SKILL.md" -q
+    
+    # Add reference and script directories directly
     zip -r "$ZIP_OUTPUT" \
-        skills/islamic-will/ \
-        script/generate_docs.py \
-        script/will_data_template.json \
+        reference/ \
+        script/ \
         README.md \
         -q
 
