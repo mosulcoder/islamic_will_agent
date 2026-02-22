@@ -258,7 +258,7 @@ scenarios = [
 
 def run_tests():
     print("================ ISLAMIC INHERITANCE TEST SCENARIOS ================\n")
-    estate = Estate(gross_value=120000, funeral_expenses=0, debts=0, wasiyyah_amount=0)
+    estate = Estate(gross_value=120000, funeral_expenses=5000, debts=10000, wasiyyah_amount=0)
     
     for i, s in enumerate(scenarios, 1):
         print(f"--- {s['name']} ---")
